@@ -1,10 +1,10 @@
 package com.osypenko.suppliermonitoringtelegrambot.service;
 
-import com.osypenko.suppliermonitoringtelegrambot.entityes.Supplier;
-import com.osypenko.suppliermonitoringtelegrambot.entityes.Task;
-import com.osypenko.suppliermonitoringtelegrambot.repositories.SupplierService;
-import com.osypenko.suppliermonitoringtelegrambot.repositories.TaskService;
-import com.osypenko.suppliermonitoringtelegrambot.repositories.UserService;
+import com.osypenko.suppliermonitoringtelegrambot.entities.Supplier;
+import com.osypenko.suppliermonitoringtelegrambot.entities.Task;
+import com.osypenko.suppliermonitoringtelegrambot.model.SupplierService;
+import com.osypenko.suppliermonitoringtelegrambot.model.TaskService;
+import com.osypenko.suppliermonitoringtelegrambot.model.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -87,8 +87,8 @@ public class ViewInformation {
 
         for (Task allTask : allTasks) {
             InlineKeyboardButton button = new InlineKeyboardButton();
-            button.setText(allTask.getExtraInfo());
-            button.setCallbackData(allTask.getExtraInfo());
+            button.setText(allTask.getText());
+            button.setCallbackData(allTask.getText());
             rowInLine.add(button);
         }
         rowsInLine.add(rowInLine);
@@ -111,8 +111,8 @@ public class ViewInformation {
         Set<String> taskSetList = taskService.getTaskSetList();
         if (taskSetList.contains(callbackData)) {
             Task task = taskService.getTaskForExtraInfo(callbackData);
-            text = TASK + task.getExtraInfo() +
-                    DESCRIPTION + task.getText() +
+            text = TASK + task.getText() +
+                    DESCRIPTION + task.getExtraInfo() +
                     STATUS + task.getTaskStatus();
         }
 

@@ -1,7 +1,7 @@
-package com.osypenko.suppliermonitoringtelegrambot.repositories;
+package com.osypenko.suppliermonitoringtelegrambot.model;
 
-import com.osypenko.suppliermonitoringtelegrambot.entityes.Supplier;
-import com.osypenko.suppliermonitoringtelegrambot.repositories.interfaces.SupplierRepository;
+import com.osypenko.suppliermonitoringtelegrambot.entities.Supplier;
+import com.osypenko.suppliermonitoringtelegrambot.model.repositories.SupplierRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

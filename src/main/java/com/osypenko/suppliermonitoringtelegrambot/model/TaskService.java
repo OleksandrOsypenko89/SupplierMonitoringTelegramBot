@@ -1,7 +1,7 @@
-package com.osypenko.suppliermonitoringtelegrambot.repositories;
+package com.osypenko.suppliermonitoringtelegrambot.model;
 
-import com.osypenko.suppliermonitoringtelegrambot.entityes.Task;
-import com.osypenko.suppliermonitoringtelegrambot.repositories.interfaces.TaskRepository;
+import com.osypenko.suppliermonitoringtelegrambot.entities.Task;
+import com.osypenko.suppliermonitoringtelegrambot.model.repositories.TaskRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,7 +23,7 @@ public class TaskService {
     public Task getTaskForExtraInfo(String key) {
         Map<String, Task> taskMap = new HashMap<>();
         for (Task task : getAllTasks()) {
-            taskMap.put(task.getExtraInfo(), task);
+            taskMap.put(task.getText(), task);
         }
         return taskMap.get(key);
     }
@@ -32,7 +32,7 @@ public class TaskService {
     public Set<String> getTaskSetList() {
         Set<String> taskExtraInfo = new HashSet<>();
         for (Task allTask : getAllTasks()) {
-            taskExtraInfo.add(allTask.getExtraInfo());
+            taskExtraInfo.add(allTask.getText());
         }
         return taskExtraInfo;
     }

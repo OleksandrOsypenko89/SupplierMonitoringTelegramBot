@@ -1,4 +1,4 @@
-package com.osypenko.suppliermonitoringtelegrambot.entityes;
+package com.osypenko.suppliermonitoringtelegrambot.entities;
 
 public enum TaskStatus {
     TODO,

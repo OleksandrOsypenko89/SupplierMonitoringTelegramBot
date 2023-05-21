@@ -1,4 +1,4 @@
-package com.osypenko.suppliermonitoringtelegrambot.entityes;
+package com.osypenko.suppliermonitoringtelegrambot.entities;
 
 import jakarta.persistence.*;
 import lombok.*;

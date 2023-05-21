@@ -1,8 +1,8 @@
 package com.osypenko.suppliermonitoringtelegrambot.service;
 
 import com.osypenko.suppliermonitoringtelegrambot.config.BotConfig;
-import com.osypenko.suppliermonitoringtelegrambot.entityes.Users;
-import com.osypenko.suppliermonitoringtelegrambot.repositories.UserService;
+import com.osypenko.suppliermonitoringtelegrambot.entities.Users;
+import com.osypenko.suppliermonitoringtelegrambot.model.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
